@@ -44,13 +44,22 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
                 </span>
 
                 <span slot="header-actions">
-                    <uui-button popovertarget="my-popover">Open Popover</uui-button>
+                    <uui-button popovertarget="settings-dialog">
+                        <uui-icon name="settings"></uui-icon>
+                    </uui-button>
                 </span>
+                <uui-dialog-layout headline="Headline">
 
-                <uui-popover-container id="my-popover" margin="10">
-                    My popover content
-                </uui-popover-container>
-
+                    <p>
+                        The dialog layout component provides a default layout to the dialog
+                        component. This is used as a direct child of the dialog element component.
+                        Please view Dialog stories for examples.
+                    </p>
+                    <uui-button slot="actions" pristine="">Cancel</uui-button>
+                    <uui-button slot="actions" look="primary" color="positive" pristine="">
+                        Action
+                    </uui-button>
+                </uui-dialog-layout>
                 <p>
                     <umb-localize key="dashboard_welcome_body">dashboard.welcome_body</umb-localize>
                 </p>
