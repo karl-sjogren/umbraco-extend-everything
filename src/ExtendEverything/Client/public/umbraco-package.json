@@ -1,5 +1,4 @@
 {
-  "$schema": "../../umbraco-package-schema.json",
   "id": "ExtendEverything",
   "name": "ExtendEverything",
   "version": "0.0.0",

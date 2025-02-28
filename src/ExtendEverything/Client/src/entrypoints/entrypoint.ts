@@ -57,7 +57,7 @@ const configureAuthToken = (host: UmbElement) => {
     const config = authContext.getOpenApiConfiguration();
 
     config.token().then(token => {
-      client.interceptors.request.use((request, options) => {
+      client.interceptors.request.use((request) => {
         request.headers.set('Authorization', `Bearer ${token}`);
         return request;
       });
