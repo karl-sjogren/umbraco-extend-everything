@@ -2,11 +2,14 @@ import { ManifestDashboard } from '@umbraco-cms/backoffice/dashboard';
 import { ManifestBase, UmbConditionConfigBase, UmbEntryPointOnInit, UmbEntryPointOnUnload, UmbExtensionRegistry } from '@umbraco-cms/backoffice/extension-api';
 import { ManifestLocalization } from '@umbraco-cms/backoffice/localization';
 import { UmbLocalizationDictionary } from '@umbraco-cms/backoffice/localization-api';
+import { client } from '../api/services.gen';
+import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
+import { UmbElement } from '@umbraco-cms/backoffice/element-api';
 
 const localization = import.meta.glob('../localization/*') as Record<string, () => Promise<{ default: UmbLocalizationDictionary }> >;
 
 // load up the manifests here
-export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
+export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
 
   const dashboardManifest = {
     type: "dashboard",
@@ -27,10 +30,12 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
     ]
   } as ManifestDashboard;
 
-  _extensionRegistry.register(dashboardManifest);
+  extensionRegistry.register(dashboardManifest);
 
-  registerLocalization('English', 'en', _extensionRegistry);
-  registerLocalization('Swedish', 'sv', _extensionRegistry);
+  registerLocalization('English', 'en', extensionRegistry);
+  registerLocalization('Swedish', 'sv', extensionRegistry);
+
+  configureAuthToken(host);
 };
 
 const registerLocalization = async (languageName: string, languageCode: string, extensionRegistry: UmbExtensionRegistry<ManifestBase, UmbConditionConfigBase<string>, ManifestBase>) => {
@@ -45,6 +50,19 @@ const registerLocalization = async (languageName: string, languageCode: string, 
   } as ManifestLocalization;
 
   extensionRegistry.register(localizationManifest);
+}
+
+const configureAuthToken = (host: UmbElement) => {
+  host.consumeContext(UMB_AUTH_CONTEXT, (authContext) => {
+    const config = authContext.getOpenApiConfiguration();
+
+    config.token().then(token => {
+      client.interceptors.request.use((request, options) => {
+        request.headers.set('Authorization', `Bearer ${token}`);
+        return request;
+      });
+    });
+  });
 }
 
 export const onUnload: UmbEntryPointOnUnload = (_host, _extensionRegistry) => {

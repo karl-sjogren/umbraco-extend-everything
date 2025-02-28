@@ -1,3 +1,4 @@
+using System.Reflection;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,4 +11,8 @@ public class ExtendEverythingApiController : ExtendEverythingApiControllerBase {
     [HttpGet("ping")]
     [ProducesResponseType<string>(StatusCodes.Status200OK)]
     public string Ping() => "Pong";
+
+    [HttpGet("version")]
+    [ProducesResponseType<string>(StatusCodes.Status200OK)]
+    public string Version() => Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "Unknown";
 }
