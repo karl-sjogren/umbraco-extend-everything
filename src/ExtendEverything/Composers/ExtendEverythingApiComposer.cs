@@ -29,12 +29,10 @@ public class ExtendEverythingApiComposer : IComposer {
             opt.SwaggerDoc(Constants.ApiName, new OpenApiInfo {
                 Title = "Extend Everything Backoffice API",
                 Version = "1.0",
-                // Contact = new OpenApiContact
-                // {
-                //     Name = "Some Developer",
-                //     Email = "you@company.com",
-                //     Url = new Uri("https://company.com")
-                // }
+                Contact = new OpenApiContact {
+                    Name = "Karl-Johan Sjögren",
+                    Url = new Uri("https://github.com/karl-sjogren/umbraco-extend-everything/")
+                }
             });
 
             // Enable Umbraco authentication for the "Example" Swagger document
