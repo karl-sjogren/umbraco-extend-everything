@@ -3,10 +3,14 @@ import { UMB_CURRENT_USER_CONTEXT, UmbCurrentUserModel } from "@umbraco-cms/back
 import { css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { ExtendEverythingService } from "../api/services.gen"
+import { UMB_MODAL_MANAGER_CONTEXT } from "@umbraco-cms/backoffice/modal";
+import { EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN } from "./ee-settings-dialog.token";
 
 
-@customElement('my-welcome-dashboard')
+@customElement('ee-dashboard')
 export class ExtendEverythingDashboardElement extends UmbLitElement {
+    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+
     @state()
     private _currentUser?: UmbCurrentUserModel;
 
@@ -18,8 +22,13 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
 
     constructor() {
         super();
+
         this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
             this._observeCurrentUser(instance);
+        });
+
+        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+            this.#modalManagerContext = instance;
         });
 
         this.#fetchVersion();
@@ -36,6 +45,14 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
         this.observe(instance.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });
+    }
+
+    #openSettingsDialog() {
+        if (!this.#modalManagerContext) {
+            return;
+        }
+
+        this.#modalManagerContext.open(this, EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN, );
     }
 
     #plusClicked() {
@@ -55,7 +72,7 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
                 </span>
 
                 <span slot="header-actions">
-                    <uui-button label="Settings" @click=${() => alert('Settings clicked')}>
+                    <uui-button label="Settings" @click=${this.#openSettingsDialog}>
                         <uui-icon name="settings"></uui-icon>
                     </uui-button>
                     <uui-button label="Increase value" @click=${this.#plusClicked}>
@@ -73,6 +90,8 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
                     <umb-localize key="dashboard_welcome_logged_in_as">dashboard_welcome_logged_in_as</umb-localize>
                     ${this._currentUser?.name ?? 'Unknown'}
                 </p>
+
+                <umb-debug visible dialog></umb-debug>
 
                 <p>
                     <umb-localize key="dashboard_welcome_body">dashboard_welcome_body</umb-localize>
