@@ -16,7 +16,7 @@
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.10.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.10.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageVersion>
@@ -31,8 +31,8 @@
     <PackageVersion Include="Umbraco.Cms.Api.Common" Version="15.2.3" />
     <PackageVersion Include="Umbraco.Cms.Api.Management" Version="15.2.3" />
     <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="15.2.3" />
-    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="15.2.3" />
-    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="15.2.3" />
+    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="15.3.0" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="15.3.0" />
     <PackageVersion Include="Umbraco.Cms" Version="15.2.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.2" />
     <PackageVersion Include="xunit.v3" Version="2.0.0" />
