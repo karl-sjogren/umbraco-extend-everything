@@ -58,7 +58,7 @@ const registerDashboard = (extensionRegistry: UmbExtensionRegistry<ManifestBase,
     alias: "ExtendEverything.Dashboard",
     elementName: "ee-dashboard",
     js: () => import("../elements/ee-dashboard"),
-    weight: -100,
+    weight: 1000,
     meta: {
       label: "Extend Everything Dashboard",
       pathname: "ee-dashboard"
