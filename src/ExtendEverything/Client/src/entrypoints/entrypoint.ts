@@ -18,6 +18,8 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
   registerHelpMenuItem(extensionRegistry);
   registerSettingsDialog(extensionRegistry);
 
+  removeDashboard(extensionRegistry, 'Umb.Dashboard.UmbracoNews');
+
   registerLocalization('English', 'en', extensionRegistry);
   registerLocalization('Swedish', 'sv', extensionRegistry);
 
@@ -73,6 +75,10 @@ const registerDashboard = (extensionRegistry: UmbExtensionRegistry<ManifestBase,
 
   extensionRegistry.register(dashboardManifest);
 }
+
+const removeDashboard = (extensionRegistry: UmbExtensionRegistry<ManifestBase, UmbConditionConfigBase<string>, ManifestBase>, alias: string) => {
+  extensionRegistry.exclude(alias);
+};
 
 const registerHelpMenuItem = (extensionRegistry: UmbExtensionRegistry<ManifestBase, UmbConditionConfigBase<string>, ManifestBase>) => {
   const helpManifest = {
