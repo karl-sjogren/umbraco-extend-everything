@@ -27,7 +27,7 @@
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
     <PackageVersion Include="TestableIO.System.IO.Abstractions.TestingHelpers" Version="22.0.12" />
-    <PackageVersion Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.12" />
+    <PackageVersion Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.0.15" />
     <PackageVersion Include="Umbraco.Cms.Api.Common" Version="15.2.3" />
     <PackageVersion Include="Umbraco.Cms.Api.Management" Version="15.2.3" />
     <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="15.2.3" />
