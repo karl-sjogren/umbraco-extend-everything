@@ -1,11 +1,10 @@
 
-import { UMB_CURRENT_USER_CONTEXT, UmbCurrentUserModel } from "@umbraco-cms/backoffice/current-user";
+import { UMB_CURRENT_USER_CONTEXT, UmbCurrentUserContext, UmbCurrentUserModel } from "@umbraco-cms/backoffice/current-user";
 import { css, html, customElement, state } from "@umbraco-cms/backoffice/external/lit";
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
-import { ExtendEverythingService } from "../api/services.gen"
+import { version } from "../api/index"
 import { UMB_MODAL_MANAGER_CONTEXT } from "@umbraco-cms/backoffice/modal";
 import { EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN } from "./ee-settings-dialog.token";
-
 
 @customElement('ee-dashboard')
 export class ExtendEverythingDashboardElement extends UmbLitElement {
@@ -35,13 +34,17 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
     }
 
     async #fetchVersion() {
-        const versionResponse = await ExtendEverythingService.version();
+        const versionResponse = await version();
         this._version = versionResponse.data ?? 'unknown';
 
     }
 
-    //Get the current user
-    private async _observeCurrentUser(instance: typeof UMB_CURRENT_USER_CONTEXT.TYPE) {
+    private async _observeCurrentUser(instance: UmbCurrentUserContext | undefined) {
+        if (!instance) {
+            console.warn('No current user context found, skipping user observation.');
+            return;
+        }
+
         this.observe(instance.currentUser, (currentUser) => {
             this._currentUser = currentUser;
         });

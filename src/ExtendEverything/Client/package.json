@@ -1,21 +1,24 @@
 {
   "name": "extend-everything",
+  "packageManager": "yarn@4.9.2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "watch": "tsc && vite build --watch",
+    "dev": "tsc && vite build --watch",
     "build": "tsc && vite build",
     "generate-client": "node scripts/generate-openapi.js https://localhost:44314/umbraco/swagger/extendeverything/swagger.json"
   },
   "devDependencies": {
-    "@hey-api/client-fetch": "^0.4.2",
-    "@hey-api/openapi-ts": "^0.53.11",
-    "@umbraco-cms/backoffice": "^*",
+    "@hey-api/client-fetch": "^0.13.1",
+    "@hey-api/openapi-ts": "^0.80.1",
+    "@umbraco-cms/backoffice": "^16.0.0",
     "chalk": "^5.3.0",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.0.0",
+    "lit": "^3.3.1",
     "node-fetch": "^3.3.2",
-    "typescript": "^5.6.3",
-    "vite": "^6.2.7"
+    "typescript": "^5.8.3",
+    "vite": "^7.0.6"
   }
 }

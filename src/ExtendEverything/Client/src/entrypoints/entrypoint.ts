@@ -2,7 +2,7 @@ import { ManifestDashboard } from '@umbraco-cms/backoffice/dashboard';
 import { ManifestBase, UmbConditionConfigBase, UmbEntryPointOnInit, UmbEntryPointOnUnload, UmbExtensionRegistry } from '@umbraco-cms/backoffice/extension-api';
 import { ManifestLocalization } from '@umbraco-cms/backoffice/localization';
 import { UmbLocalizationDictionary } from '@umbraco-cms/backoffice/localization-api';
-import { client } from '../api/services.gen';
+import { client } from '../api/client.gen';
 import { UMB_AUTH_CONTEXT } from '@umbraco-cms/backoffice/auth';
 import { UmbElement } from '@umbraco-cms/backoffice/element-api';
 import { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
@@ -41,6 +41,11 @@ const registerLocalization = async (languageName: string, languageCode: string, 
 
 const configureAuthToken = (host: UmbElement) => {
   host.consumeContext(UMB_AUTH_CONTEXT, (authContext) => {
+    if (!authContext) {
+      console.warn('No auth context found, skipping token configuration.');
+      return;
+    }
+
     const config = authContext.getOpenApiConfiguration();
 
     config.token().then(token => {
