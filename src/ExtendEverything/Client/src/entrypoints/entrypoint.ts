@@ -11,7 +11,6 @@ import { ManifestModal } from '@umbraco-cms/backoffice/modal';
 
 const localization = import.meta.glob('../localization/*') as Record<string, () => Promise<{ default: UmbLocalizationDictionary }> >;
 
-// load up the manifests here
 export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
 
   registerDashboard(extensionRegistry);
