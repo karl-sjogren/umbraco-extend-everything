@@ -4,70 +4,70 @@ import { css, html, customElement, state } from "@umbraco-cms/backoffice/externa
 import { UmbLitElement } from "@umbraco-cms/backoffice/lit-element";
 import { version } from "../api/index"
 import { UMB_MODAL_MANAGER_CONTEXT } from "@umbraco-cms/backoffice/modal";
-import { EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN } from "./ee-settings-dialog.token";
+import { EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN } from "../ee-settings-dialog/dialog.token";
 
 @customElement('ee-dashboard')
 export class ExtendEverythingDashboardElement extends UmbLitElement {
-    #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
+  #modalManagerContext?: typeof UMB_MODAL_MANAGER_CONTEXT.TYPE;
 
-    @state()
-    private _currentUser?: UmbCurrentUserModel;
+  @state()
+  private _currentUser?: UmbCurrentUserModel;
 
-    @state()
-    private _number = 0;
+  @state()
+  private _number = 0;
 
-    @state()
-    private _version = '';
+  @state()
+  private _version = '';
 
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
-            this._observeCurrentUser(instance);
-        });
+    this.consumeContext(UMB_CURRENT_USER_CONTEXT, (instance) => {
+      this._observeCurrentUser(instance);
+    });
 
-        this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
-            this.#modalManagerContext = instance;
-        });
+    this.consumeContext(UMB_MODAL_MANAGER_CONTEXT, (instance) => {
+      this.#modalManagerContext = instance;
+    });
 
-        this.#fetchVersion();
+    this.#fetchVersion();
+  }
+
+  async #fetchVersion() {
+    const versionResponse = await version();
+    this._version = versionResponse.data ?? 'unknown';
+
+  }
+
+  private async _observeCurrentUser(instance: UmbCurrentUserContext | undefined) {
+    if (!instance) {
+      console.warn('No current user context found, skipping user observation.');
+      return;
     }
 
-    async #fetchVersion() {
-        const versionResponse = await version();
-        this._version = versionResponse.data ?? 'unknown';
+    this.observe(instance.currentUser, (currentUser) => {
+      this._currentUser = currentUser;
+    });
+  }
 
+  #openSettingsDialog() {
+    if (!this.#modalManagerContext) {
+      return;
     }
 
-    private async _observeCurrentUser(instance: UmbCurrentUserContext | undefined) {
-        if (!instance) {
-            console.warn('No current user context found, skipping user observation.');
-            return;
-        }
+    this.#modalManagerContext.open(this, EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN,);
+  }
 
-        this.observe(instance.currentUser, (currentUser) => {
-            this._currentUser = currentUser;
-        });
-    }
+  #plusClicked() {
+    this._number += 1;
+  }
 
-    #openSettingsDialog() {
-        if (!this.#modalManagerContext) {
-            return;
-        }
+  #minusClicked() {
+    this._number -= 1;
+  }
 
-        this.#modalManagerContext.open(this, EXTEND_EVERYTHING_SETTINGS_DIALOG_TOKEN, );
-    }
-
-    #plusClicked() {
-        this._number += 1;
-    }
-
-    #minusClicked() {
-        this._number -= 1;
-    }
-
-    render() {
-        return html`
+  render() {
+    return html`
             <uui-box>
                 <span slot="headline">
                     <umb-localize key="dashboard_welcome_heading">dashboard_welcome_heading</umb-localize>
@@ -113,22 +113,22 @@ export class ExtendEverythingDashboardElement extends UmbLitElement {
                 <p><umb-localize key="common_copyright">common.copyright</umb-localize></p>
             </uui-box>
         `;
-    }
+  }
 
-    static styles = [
-        css`
+  static styles = [
+    css`
         :host {
             display: block;
             padding: 24px;
         }
     `,
-    ];
+  ];
 }
 
 export default ExtendEverythingDashboardElement;
 
 declare global {
-    interface HTMLElementTagNameMap {
-        'ee-dashboard': ExtendEverythingDashboardElement;
-    }
+  interface HTMLElementTagNameMap {
+    'ee-dashboard': ExtendEverythingDashboardElement;
+  }
 }

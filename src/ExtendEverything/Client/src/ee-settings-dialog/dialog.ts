@@ -1,7 +1,7 @@
 import { html, LitElement, property, customElement } from "@umbraco-cms/backoffice/external/lit";
 import { UmbElementMixin } from "@umbraco-cms/backoffice/element-api";
 import type { UmbModalContext, UmbModalExtensionElement } from "@umbraco-cms/backoffice/modal";
-import type { ExtendEverythingSettingsDialogData, ExtendEverythingSettingsDialogValue } from "./ee-settings-dialog.token.ts";
+import type { ExtendEverythingSettingsDialogData, ExtendEverythingSettingsDialogValue } from "./dialog.token.ts";
 
 @customElement('custom-dialog')
 export default class MyDialogElement
