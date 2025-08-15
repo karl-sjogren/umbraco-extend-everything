@@ -8,6 +8,7 @@ import { UmbElement } from '@umbraco-cms/backoffice/element-api';
 import { ManifestMenuItem } from '@umbraco-cms/backoffice/menu';
 import { UMB_HELP_MENU_ALIAS } from '@umbraco-cms/backoffice/help';
 import { ManifestModal } from '@umbraco-cms/backoffice/modal';
+import { UMB_COLLECTION_ALIAS_CONDITION } from '@umbraco-cms/backoffice/collection';
 
 const localization = import.meta.glob('../localization/*') as Record<string, () => Promise<{ default: UmbLocalizationDictionary }> >;
 
@@ -16,6 +17,7 @@ export const onInit: UmbEntryPointOnInit = (host, extensionRegistry) => {
   registerDashboard(extensionRegistry);
   registerHelpMenuItem(extensionRegistry);
   registerSettingsDialog(extensionRegistry);
+  registerMediaCollectionAction(extensionRegistry);
 
   removeDashboard(extensionRegistry, 'Umb.Dashboard.UmbracoNews');
 
@@ -114,4 +116,26 @@ const registerSettingsDialog = (extensionRegistry: UmbExtensionRegistry<Manifest
 
 export const onUnload: UmbEntryPointOnUnload = (_host, _extensionRegistry) => {
   console.log('Goodbye from my extension 👋');
+};
+
+const registerMediaCollectionAction = (extensionRegistry: UmbExtensionRegistry<ManifestBase, UmbConditionConfigBase<string>, ManifestBase>) => {
+  const manifest = {
+      type: "collectionAction",
+      kind: "button",
+      alias: "ExtendEverything.MediaCollectionAction",
+      name: "Extend Everything Media Collection Action",
+      api: () => import("../elements/ee-media-collection-action"),
+      meta: {
+          label: "Extend Everything Media Collection Action",
+          additionalOptions: false
+      },
+		conditions: [
+			{
+				alias: UMB_COLLECTION_ALIAS_CONDITION,
+				match: 'Umb.Collection.Media'
+			},
+		],
+  };
+
+  extensionRegistry.register(manifest);
 };
