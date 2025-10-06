@@ -2,8 +2,8 @@
   <ItemGroup>
     <GlobalPackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.25" />
     <GlobalPackageReference Include="Karls.Analyzers" Version="0.4.3" />
-    <GlobalPackageReference Include="Roslynator.Analyzers" Version="4.14.0" />
-    <GlobalPackageReference Include="Roslynator.Formatting.Analyzers" Version="4.14.0" />
+    <GlobalPackageReference Include="Roslynator.Analyzers" Version="4.14.1" />
+    <GlobalPackageReference Include="Roslynator.Formatting.Analyzers" Version="4.14.1" />
     <GlobalPackageReference Include="TestableIO.System.IO.Abstractions.Analyzers" Version="2022.0.0" />
   </ItemGroup>
   <ItemGroup>
@@ -34,7 +34,7 @@
     <PackageVersion Include="Umbraco.Cms.Web.Common" Version="16.1.1" />
     <PackageVersion Include="Umbraco.Cms.Web.Website" Version="16.1.1" />
     <PackageVersion Include="Umbraco.Cms" Version="16.1.1" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.3" />
-    <PackageVersion Include="xunit.v3" Version="3.0.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="xunit.v3" Version="3.1.0" />
   </ItemGroup>
 </Project>
