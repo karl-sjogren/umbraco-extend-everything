@@ -7,8 +7,8 @@ namespace ExtendEverything.Composers;
 
 public class ExtendEverythingSettingsComposer : IComposer {
     public void Compose(IUmbracoBuilder builder) {
-        builder.Services.AddUmbracoDbContext<ExtendEverythingContext>((serviceProvider, options) => {
-            options.UseUmbracoDatabaseProvider(serviceProvider);
+        builder.Services.AddUmbracoDbContext<ExtendEverythingContext>((options, connectionString, providerName, serviceProvider) => {
+            options.UseUmbracoDatabaseProvider(serviceProvider!);
         });
     }
 }
