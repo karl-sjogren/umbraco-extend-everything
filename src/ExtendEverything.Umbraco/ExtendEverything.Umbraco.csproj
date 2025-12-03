@@ -7,11 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.Azure.Storage.Blobs" />
+    <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Aspire.StackExchange.Redis" />
+    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" />
     <PackageReference Include="Umbraco.Cms" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ExtendEverything\ExtendEverything.csproj" />
+    <ProjectReference Include="..\ExtendEverything.ServiceDefaults\ExtendEverything.ServiceDefaults.csproj" />
   </ItemGroup>
 
   <!-- Disable watch for umbraco files such as lucene -->

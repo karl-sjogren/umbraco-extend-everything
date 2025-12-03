@@ -8,7 +8,9 @@
     <Project Path="benchmarks/ExtendEverything.Benchmarks/ExtendEverything.Benchmarks.csproj" />
   </Folder>
   <Folder Name="/src/">
+    <Project Path="src/ExtendEverything.AppHost/ExtendEverything.AppHost.csproj" />
     <Project Path="src/ExtendEverything.Core/ExtendEverything.Core.csproj" />
+    <Project Path="src/ExtendEverything.ServiceDefaults/ExtendEverything.ServiceDefaults.csproj" />
     <Project Path="src/ExtendEverything.Umbraco/ExtendEverything.Umbraco.csproj" />
     <Project Path="src/ExtendEverything/ExtendEverything.csproj" />
   </Folder>

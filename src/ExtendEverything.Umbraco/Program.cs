@@ -1,4 +1,13 @@
+using ExtendEverything.Umbraco;
+using Serilog;
+using Serilog.Configuration;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
+
+builder.Services.AddSerilog();
+builder.Services.AddSingleton<ILoggerSettings, DefaultLoggerSettings>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
