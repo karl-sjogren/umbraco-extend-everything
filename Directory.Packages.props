@@ -12,6 +12,8 @@
     <PackageVersion Include="Aspire.Hosting.Azure.Redis" Version="13.0.1" />
     <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.0.1" />
     <PackageVersion Include="Aspire.Hosting.Azure.Storage" Version="13.0.1" />
+    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.0.1" />
+    <PackageVersion Include="Aspire.Hosting.NodeJs" Version="9.5.2" />
     <PackageVersion Include="Aspire.Hosting.Redis" Version="13.0.1" />
     <PackageVersion Include="Aspire.StackExchange.Redis" Version="13.0.1" />
     <PackageVersion Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.0.1" />
