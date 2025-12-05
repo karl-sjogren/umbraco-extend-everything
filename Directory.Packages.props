@@ -7,16 +7,16 @@
     <GlobalPackageReference Include="TestableIO.System.IO.Abstractions.Analyzers" Version="2022.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageVersion Include="Aspire.Azure.Storage.Blobs" Version="13.0.1" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.0.1" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Redis" Version="13.0.1" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.0.1" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Storage" Version="13.0.1" />
-    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.0.1" />
+    <PackageVersion Include="Aspire.Azure.Storage.Blobs" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Redis" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Storage" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.0.2" />
     <PackageVersion Include="Aspire.Hosting.NodeJs" Version="9.5.2" />
     <PackageVersion Include="Aspire.Hosting.Redis" Version="13.0.1" />
-    <PackageVersion Include="Aspire.StackExchange.Redis" Version="13.0.1" />
-    <PackageVersion Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.0.1" />
+    <PackageVersion Include="Aspire.StackExchange.Redis" Version="13.0.2" />
+    <PackageVersion Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.0.2" />
     <PackageVersion Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.15.8" />
     <PackageVersion Include="BenchmarkDotNet" Version="0.15.8" />
     <PackageVersion Include="coverlet.msbuild" Version="6.0.4" />
@@ -37,7 +37,7 @@
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
-    <PackageVersion Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="13.0.1" />
+    <PackageVersion Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="13.0.2" />
     <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
     <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
