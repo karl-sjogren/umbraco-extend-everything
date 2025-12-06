@@ -1,0 +1,14 @@
+{
+  "id": "ExtendEverything.TetrisDashboard",
+  "name": "ExtendEverything.TetrisDashboard",
+  "version": "0.0.0",
+  "allowTelemetry": true,
+  "extensions": [
+    {
+      "name": "Extend Everything Tetris Dashboard Bundle",
+      "alias": "ExtendEverything.TetrisDashboard.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/ExtendEverythingTetrisDashboard/extend-everything-tetris-dashboard.js"
+    }
+  ]
+}

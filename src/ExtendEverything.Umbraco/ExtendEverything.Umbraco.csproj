@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExtendEverything\ExtendEverything.csproj" />
+    <ProjectReference Include="..\ExtendEverything.TetrisDashboard\ExtendEverything.TetrisDashboard.csproj" />
     <ProjectReference Include="..\ExtendEverything.ServiceDefaults\ExtendEverything.ServiceDefaults.csproj" />
   </ItemGroup>
 
