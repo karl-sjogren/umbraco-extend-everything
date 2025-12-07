@@ -168,13 +168,13 @@ jobs:
     - name: Restore NuGet packages
       run: dotnet restore --verbosity minimal
 
-    - name: Publish application
-      run: dotnet publish --output ./artifacts --configuration Release
-      working-directory: ./
-
     - name: Build Tetris Dashboard
       run: yarn && yarn build
       working-directory: ./src/ExtendEverything.TetrisDashboard/Client/
+
+    - name: Build application
+      run: dotnet build ./src/ExtendEverything.Umbraco/ExtendEverything.Umbraco.csproj --configuration Release
+      working-directory: ./
 
     - name: Pack Tetris Dashboard
       run: dotnet pack ./src/ExtendEverything.TetrisDashboard/ExtendEverything.TetrisDashboard.csproj --configuration Release --output ./artifacts

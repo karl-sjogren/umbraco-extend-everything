@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "patternProperties": {
+    "Url$": {
+      "type": "string",
+      "pattern": "^(https?)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,6}(/\\S*)?$"
+    }
+  },
+  "title": "Umbraco Marketplace Package Owner Information",
+  "description": "JSON schema definition for the additional information provided by package owners to expand a package's marketplace listing.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "AddOnPackagesRequiredForUmbracoCloud": {
+      "type": "array",
+      "items": {
+        "description": "The NuGet package Id.",
+        "type": "string",
+        "maxLength": 128
+      },
+      "uniqueItems": true
+    },
+    "AlternateCategory": {
+      "description": "An optional secondary category in which the package will be listed.",
+      "type": "string",
+      "maxLength": 50,
+      "enum": [ "Analytics & Insights", "Artificial Intelligence", "Campaign & Marketing", "Commerce", "Developer Tools", "Editor Tools", "Headless", "PIM & DAM", "Search", "Themes & Starter Kits", "Translations" ]
+    },
+    "AlternatePackageNames": {
+      "description": "A collection of alternate package names used for data matching from other systems. For example, a name provided in a package.manifest file that differs from the NuGet package Id can be provided here.",
+      "type": "array",
+      "items": {
+        "description": "The alternate package name.",
+        "type": "string",
+        "maxLength": 500
+      },
+      "uniqueItems": true,
+      "deprecated": true
+    },
+    "AuthorDetails": {
+      "description": "Further details about the author of the package.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "description": "The name of the the package author. If provided this will override the Authors field retrieved from the NuGet package",
+          "type": "string",
+          "maxLength": 200
+        },
+        "ImageUrl": {
+          "description": "A URL to the package author's profile image.",
+          "type": "string",
+          "maxLength": 4000
+        },
+        "Description": {
+          "description": "A short description of the package author.",
+          "type": "string",
+          "maxLength": 4000
+        },
+        "Url": {
+          "description": "A URL to the package developer's blog or other public profile.",
+          "type": "string",
+          "maxLength": 4000
+        },
+        "Contributors": {
+          "description": "A collection of one or more key contributors/co-authors of the package.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "Name": {
+                "description": "The name of the contributor.",
+                "type": "string",
+                "maxLength": 100
+              },
+              "Url": {
+                "description": "A URL to the contributor's blog or other public profile.",
+                "type": "string",
+                "maxLength": 4000,
+                "pattern": "^(https?)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,6}(/\\S*)?$"
+              }
+            },
+            "required": [
+              "Name"
+            ]
+          }
+        },
+        "SyncContributorsFromRepository": {
+          "description": "If contributors are not explicitly provided, a GitHub repository is available in the 'RepositoryUrl' of the NuGet package, and this option is set to true; the contributors will be synchronized from the GitHub repo.",
+          "type": "boolean"
+        }
+      },
+      "required": []
+    },
+    "Category": {
+      "description": "The category in which the package will be listed.",
+      "type": "string",
+      "maxLength": 50,
+      "enum": [ "Analytics & Insights", "Artificial Intelligence", "Campaign & Marketing", "Commerce", "Developer Tools", "Editor Tools", "Headless", "PIM & DAM", "Search", "Themes & Starter Kits", "Translations" ]
+    },
+    "Description": {
+      "description": "The package description, which if provided will be used instead of the information retrieved from NuGet.",
+      "type": "string",
+      "maxLength": 4000
+    },
+    "DiscussionForumUrl": {
+      "description": "A URL to a discussion forum about the package.",
+      "type": "string",
+      "maxLength": 4000
+    },
+    "DocumentationUrl": {
+      "description": "A URL to documentation about the package.",
+      "type": "string",
+      "maxLength": 4000
+    },
+    "IssueTrackerUrl": {
+      "description": "A URL to an issue tracker for the package.",
+      "type": "string",
+      "maxLength": 4000
+    },
+    "LicenseTypes": {
+      "description": "The available license types for the package.",
+      "type": "array",
+      "items": {
+        "description": "The license type name.",
+        "type": "string",
+        "enum": [ "Free", "Purchase", "Subscription" ]
+      }
+    },
+    "LicenseType": {
+      "deprecated": true,
+      "description": "The license type name. DEPRECATED - use LicenseTypes instead.",
+      "type": "string",
+      "enum": [ "Free", "Purchase", "Subscription" ]
+    },
+    "LookingForContributors": {
+      "description": "Set to true if you'd like your package indicated on the Marketplace as looking for contributors to help with development or support.",
+      "type": "boolean"
+    },
+    "LookingForMaintainer": {
+      "description": "Set to true if you are looking to move away from supporting your package and would welcome someone stepping forward as a new maintainer.",
+      "type": "boolean"
+    },
+    "IsSubPackageOf": {
+      "description": "The NuGet package Id of a 'parent' package, allowing for packages with multiple subtle variations to be displayed under a single listing.",
+      "type": "string",
+      "maxLength": 128
+    },
+    "PackageType": {
+      "description": "The type of package.",
+      "type": "string",
+      "enum": [ "Package", "Integration" ]
+    },
+    "PackagesByAuthor": {
+      "description": "A collection of packages created by the same author.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 128,
+        "description": "The NuGet package Id."
+      }
+    },
+    "RelatedPackages": {
+      "type": "array",
+      "items": {
+        "description": "A collection of related packages created by the same author.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "PackageId": {
+            "description": "The NuGet package Id.",
+            "type": "string",
+            "maxLength": 128
+          },
+          "Description": {
+            "description": "A short description of the package.",
+            "type": "string",
+            "maxLength": 4000
+          },
+          "GroupTitle": {
+            "description": "An optional group title used to list this and following packages without a specified title under a heading.",
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "PackageId"
+        ]
+      }
+    },
+    "Screenshots": {
+      "type": "array",
+      "items": {
+        "description": "A collection of package media assets.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ImageUrl": {
+            "description": "The URL to an image file.",
+            "type": "string",
+            "maxLength": 4000,
+            "pattern": "^(https?)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,6}(/\\S*)?$"
+          },
+          "VideoUrl": {
+            "description": "The URL to a video file.",
+            "type": "string",
+            "maxLength": 4000,
+            "pattern": "^(https?)\\://[a-zA-Z0-9\\-\\.]+\\.[a-zA-Z]{2,6}(/\\S*)?$"
+          },
+          "Caption": {
+            "description": "A caption for the asset.",
+            "type": "string"
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "ImageUrl"
+            ]
+          },
+          {
+            "required": [
+              "VideoUrl"
+            ]
+          }
+        ]
+      }
+    },
+    "Tags": {
+      "description": "A collection of package tags.",
+      "type": "array",
+      "items": {
+        "description": "The tag name.",
+        "type": "string",
+        "maxLength": 100
+      }
+    },
+    "Title": {
+      "description": "The package title, which if provided will be used instead of the information retrieved from NuGet.",
+      "type": "string",
+      "maxLength": 256
+    },
+    "VersionDependencyMode": {
+      "description": "Defines the version dependency mode. Set to 'Semver' to avoid any assumptions being made about Umbraco version support when importing. For example, by default we assume a package defined with a minimum dependency of <= 13 and no maximum will not work on Umbraco 14. By setting this value to 'SemVer' we will respect the unlimited maximum indicated.",
+      "type": "string",
+      "enum": [ "Default", "SemVer" ]
+    },
+    "VersionSpecificPackageIds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "UmbracoMajorVersion": {
+            "description": "The Umbraco major version.",
+            "type": "integer"
+          },
+          "PackageId": {
+            "description": "The NuGet package Id.",
+            "type": "string",
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "UmbracoMajorVersion",
+          "PackageId"
+        ]
+      }
+    },
+    "VideoUrl": {
+      "description": "A URL to an embeddable video demonstrating the package.",
+      "type": "string"
+    }
+  },
+  "required": []
+}

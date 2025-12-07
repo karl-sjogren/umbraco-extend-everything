@@ -1,0 +1,16 @@
+{
+  "$schema": "umbraco-marketplace-schema.json",
+  "Title": "Tetris dashboard",
+	"Category": "Editor Tools",
+  "AuthorDetails": {
+    "Name": "Karl-Johan Sjögren",
+    "Url": "https://karl-sjogren.com/"
+  },
+	"IssueTrackerUrl": "https://github.com/karl-sjogren/umbraco-extend-everything/issues",
+	"Screenshots": [
+		{
+			"ImageUrl": "https://github.com/karl-sjogren/umbraco-extend-everything/develop/screenshot1.png",
+			"Caption": "The Tetris game running in the Umbraco backoffice dashboard."
+		}
+	]
+}

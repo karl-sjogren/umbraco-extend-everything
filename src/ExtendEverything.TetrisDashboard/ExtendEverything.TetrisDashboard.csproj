@@ -7,18 +7,23 @@
   <PropertyGroup>
     <PackageId>ExtendEverything.TetrisDashboard</PackageId>
     <Title>Tetris dashboard for Umbraco 17</Title>
-    <Version>0.0.1</Version>
+    <Version>0.0.3</Version>
     <Authors>Karl-Johan Sjögren</Authors>
     <Description>Adds a Tetris dashboard to the Umbraco 17 backoffice.</Description>
+    <Copyright>Copyright © 2025 Karl-Johan Sjögren</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageProjectUrl>https://github.com/karl-sjogren/umbraco-extend-everything/</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>Umbraco;Tetris;umbraco-marketplace</PackageTags>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <NoWarn>NU5100,NU5119</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="package/icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
