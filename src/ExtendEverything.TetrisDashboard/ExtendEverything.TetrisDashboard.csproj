@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <PropertyGroup>
     <PackageId>ExtendEverything.TetrisDashboard</PackageId>
     <Title>Tetris dashboard for Umbraco 17</Title>
+    <Version>0.0.1</Version>
     <Authors>Karl-Johan Sjögren</Authors>
     <Description>Adds a Tetris dashboard to the Umbraco 17 backoffice.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -20,10 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web.Website" />
-    <PackageReference Include="Umbraco.Cms.Web.Common" />
-    <PackageReference Include="Umbraco.Cms.Api.Common" />
-    <PackageReference Include="Umbraco.Cms.Api.Management" />
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="17.0.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="17.0.0" />
+		<PackageReference Remove="TestableIO.System.IO.Abstractions.Wrappers"/>
+		<PackageReference Remove="Microsoft.CodeAnalysis.BannedApiAnalyzers"/>
   </ItemGroup>
 
   <ItemGroup>
