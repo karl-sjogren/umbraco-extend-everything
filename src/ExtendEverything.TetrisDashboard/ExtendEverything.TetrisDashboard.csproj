@@ -5,9 +5,19 @@
 
   <PropertyGroup>
     <PackageId>ExtendEverything.TetrisDashboard</PackageId>
-    <Product>ExtendEverything.TetrisDashboard</Product>
-    <Title>ExtendEverything.TetrisDashboard</Title>
+    <Title>Tetris dashboard for Umbraco 17</Title>
+    <Authors>Karl-Johan Sjögren</Authors>
+    <Description>Adds a Tetris dashboard to the Umbraco 17 backoffice.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <NoWarn>NU5100,NU5119</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" />

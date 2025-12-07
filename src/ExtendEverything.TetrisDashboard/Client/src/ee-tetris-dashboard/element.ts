@@ -8,10 +8,6 @@ export class ExtendEverythingTetrisDashboardElement extends UmbLitElement {
   @query('#tetris-canvas')
   private _tetrisCanvas!: HTMLCanvasElement;
 
-  /*@state()
-  private _version = '';*/
-
-
   private _tetrisGameInstance: ClassicTetris | undefined;
 
   constructor() {
@@ -25,6 +21,16 @@ export class ExtendEverythingTetrisDashboardElement extends UmbLitElement {
     this._tetrisGameInstance = new ClassicTetris(this._tetrisCanvas, {
       canvasFont: `22px ${fontFamily}`,
       canvasFontColor: '#000',
+      backgroundColor: '#FFF',
+      gridColor: '#f00',
+      borderColor: '#444',
+      ghostColor: ['#aaa', '#ddd'],
+
+      pauseText: this.localize.term('tetris_dashboard_tetris_paused') ?? 'Paused',
+      scoreText: this.localize.term('tetris_dashboard_tetris_score') ?? 'Score',
+      levelText: this.localize.term('tetris_dashboard_tetris_level') ?? 'Level',
+      linesText: this.localize.term('tetris_dashboard_tetris_lines') ?? 'Lines',
+      nextText: this.localize.term('tetris_dashboard_tetris_next') ?? 'Next'
     });
   }
 
@@ -45,14 +51,6 @@ export class ExtendEverythingTetrisDashboardElement extends UmbLitElement {
           <umb-localize key="tetris_dashboard_heading">tetris_dashboard_heading</umb-localize>
         </span>
 
-        <span slot="header-actions">
-          <uui-button label="Increase value" @click=${this.#playPauseButtonClick}>
-            <uui-icon>
-              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"/></svg>
-            </uui-icon>
-          </uui-button>
-        </span>
-
         <div class="stack">
           <canvas id="tetris-canvas" class="tetris-canvas" width="520" height="600"></canvas>
 
@@ -67,8 +65,14 @@ export class ExtendEverythingTetrisDashboardElement extends UmbLitElement {
       <uui-box>
         <umb-localize key="tetris_dashboard_classic_tetris">tetris_dashboard_classic_tetris</umb-localize>
         &mdash;
-        <a href="https://github.com/albertlabo/classic-tetris" target="_blank" rel="noopener">
+        <a href="https://github.com/llop/classic-tetris-js/" target="_blank" rel="noopener">
           <umb-localize key="tetris_dashboard_classic_tetris_link">tetris_dashboard_classic_tetris_link</umb-localize>
+        </a>
+        &mdash;
+        <umb-localize key="tetris_dashboard_extend_everything">tetris_dashboard_extend_everything</umb-localize>
+        &mdash;
+        <a href="https://github.com/karl-sjogren/umbraco-extend-everything/" target="_blank" rel="noopener">
+          <umb-localize key="tetris_dashboard_extend_everything_link">tetris_dashboard_extend_everything_link</umb-localize>
         </a>
       </uui-box>
 
@@ -80,9 +84,6 @@ export class ExtendEverythingTetrisDashboardElement extends UmbLitElement {
       :host {
         display: block;
         padding: 24px;
-      }
-
-      .tetris-canvas {
       }
 
       .stack {

@@ -4,7 +4,7 @@ const a = [
     name: "Tetris Dashboard",
     alias: "ExtendEverything.TetrisDashboard",
     elementName: "ee-tetris-dashboard",
-    js: () => import("./element-AECaiYxF.js"),
+    js: () => import("./element-DTlWj0Gm.js"),
     weight: 10,
     meta: {
       label: "Tetris Dashboard",
@@ -17,7 +17,7 @@ const a = [
       }
     ]
   }
-], t = /* @__PURE__ */ Object.assign({ "./translations/en.ts": () => import("./en--MWoIkLe.js"), "./translations/sv.ts": () => import("./sv-9SXLtkyF.js") });
+], t = /* @__PURE__ */ Object.assign({ "./translations/en.ts": () => import("./en-8FiVxEyV.js"), "./translations/sv.ts": () => import("./sv-DkIuniBL.js") });
 console.log(t);
 const s = [
   {

@@ -1,5 +1,5 @@
 // Copied from https://github.com/llop/classic-tetris-js/blob/8ba2eb38fac84b677d81f55622a933fa362b223f/classic-tetris.js
-// and slightly modified for TypeScript usage
+// and slightly modified for TypeScript usage and localization
 // License: MIT License (MIT)
 
 // @ts-nocheck
@@ -261,7 +261,13 @@ export default class ClassicTetris {
         tetrisSound = undefined,
         levelChangeSound = undefined,
         pauseSound = undefined,
-        gameTheme = undefined
+        gameTheme = undefined,
+
+        pauseText = 'PAUSED',
+        scoreText= 'Score',
+        levelText = 'Level',
+        linesText = 'Lines',
+        nextText = 'Next'
 
       } = {}) {
 
@@ -347,6 +353,13 @@ export default class ClassicTetris {
     this.levelChangeSound = levelChangeSound;   // level increase
     this.pauseSound = pauseSound;               // game paused
     this.gameTheme = gameTheme;                 // theme song
+
+    // texts
+    this.pauseText = pauseText;
+    this.scoreText = scoreText;
+    this.levelText = levelText;
+    this.linesText = linesText;
+    this.nextText = nextText;
 
     // pieces
     this.pieces = [
@@ -1605,7 +1618,7 @@ export default class ClassicTetris {
       // write PAUSE on the board if game is paused
       this.context.font = this.canvasFont;
       this.context.fillStyle = this.canvasFontColor;
-      this.context.fillText('PAUSE', this.pauseX, this.pauseY);
+      this.context.fillText(this.pauseText, this.pauseX, this.pauseY);
 
     } else {
       // draw grid if not paused
@@ -1704,10 +1717,10 @@ export default class ClassicTetris {
 
   // draw heads-up display
   _drawHUD() {
-    let scoreStr = 'Score:   ';
-    let levelStr = 'Level:   ';
-    let linesStr = 'Lines:   ';
-    let nextStr = 'Next';
+    let scoreStr = (this.scoreText + ':').padEnd(9, ' ');
+    let levelStr = (this.levelText + ':').padEnd(9, ' ');
+    let linesStr = (this.linesText + ':').padEnd(9, ' ');
+    let nextStr = this.nextText;
     if (this.gameState != ClassicTetris.STATE_PAUSE) {
       // show data only if game is not paused
       scoreStr += this.score;
