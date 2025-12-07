@@ -6,10 +6,11 @@
     "Name": "Karl-Johan Sjögren",
     "Url": "https://karl-sjogren.com/"
   },
+  "LicenseTypes": [ "Free" ],
 	"IssueTrackerUrl": "https://github.com/karl-sjogren/umbraco-extend-everything/issues",
 	"Screenshots": [
 		{
-			"ImageUrl": "https://github.com/karl-sjogren/umbraco-extend-everything/develop/screenshot1.png",
+			"ImageUrl": "https://raw.githubusercontent.com/karl-sjogren/umbraco-extend-everything/refs/heads/develop/src/ExtendEverything.TetrisDashboard/package/screenshot1.png",
 			"Caption": "The Tetris game running in the Umbraco backoffice dashboard."
 		}
 	]
