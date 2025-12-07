@@ -8,6 +8,6 @@ builder
     .AddAzureSql(umbraco, "extendeverything-sql", "extendeverything-sqldb")
     .AddAzureStorage(umbraco, "extendeverything-storage", "umbracomedia")
     .AddRedisCache(umbraco, "extendeverything-redis")
-    .AddBackofficeExtension(umbraco, "extendeverything-backoffice-extension");
+    .AddBackofficeExtensions(umbraco);
 
 builder.Build().Run();
