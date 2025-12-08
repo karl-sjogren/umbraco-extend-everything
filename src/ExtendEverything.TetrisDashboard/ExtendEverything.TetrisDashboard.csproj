@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="17.0.0" />
-    <PackageReference Include="Umbraco.Cms.Web.Common" Version="17.0.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="17.0.1" />
 		<PackageReference Remove="TestableIO.System.IO.Abstractions.Wrappers"/>
 		<PackageReference Remove="Microsoft.CodeAnalysis.BannedApiAnalyzers"/>
   </ItemGroup>

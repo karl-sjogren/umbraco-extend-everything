@@ -45,7 +45,7 @@
     <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.0.0" />
     <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.0.0" />
     <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="17.0.0" />
-    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.0.0" />
+    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.0.1" />
     <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.0.0" />
     <PackageVersion Include="Umbraco.Cms" Version="17.0.0" />
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="17.0.0" />
