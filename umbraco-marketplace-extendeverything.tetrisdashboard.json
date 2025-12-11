@@ -1,13 +1,17 @@
 {
-  "$schema": "umbraco-marketplace-schema.json",
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
   "Title": "Tetris dashboard",
 	"Category": "Editor Tools",
   "AuthorDetails": {
     "Name": "Karl-Johan Sjögren",
-    "Url": "https://karl-sjogren.com/"
+    "Url": "https://karl-sjogren.com/",
+    "ImageUrl": "https://github.com/karl-sjogren.png"
   },
+  "Tags": ["tetris", "dashboard", "game", "fun", "backoffice", "extend-everything"],
   "LicenseTypes": [ "Free" ],
+  "PackageType": "Package",
 	"IssueTrackerUrl": "https://github.com/karl-sjogren/umbraco-extend-everything/issues",
+  "DiscussionForumUrl": "https://github.com/karl-sjogren/umbraco-extend-everything/discussions",
 	"Screenshots": [
 		{
 			"ImageUrl": "https://raw.githubusercontent.com/karl-sjogren/umbraco-extend-everything/refs/heads/develop/src/ExtendEverything.TetrisDashboard/package/screenshot1.png",
