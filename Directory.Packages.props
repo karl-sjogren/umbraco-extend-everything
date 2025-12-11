@@ -24,14 +24,14 @@
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.0.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="5.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.1">
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageVersion>
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics.Testing" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.0.0" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.0.0" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.Testing" Version="10.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
@@ -42,12 +42,12 @@
     <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
     <PackageVersion Include="TestableIO.System.IO.Abstractions.TestingHelpers" Version="22.1.0" />
     <PackageVersion Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.0.0" />
-    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.0.0" />
-    <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="17.0.0" />
-    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.0.1" />
-    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.0.1" />
-    <PackageVersion Include="Umbraco.Cms" Version="17.0.0" />
+    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.0.2" />
+    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.0.2" />
+    <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="17.0.2" />
+    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.0.2" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.0.2" />
+    <PackageVersion Include="Umbraco.Cms" Version="17.0.2" />
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="17.0.0" />
     <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="17.0.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />

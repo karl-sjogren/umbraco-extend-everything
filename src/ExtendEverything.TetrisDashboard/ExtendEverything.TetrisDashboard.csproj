@@ -7,7 +7,7 @@
   <PropertyGroup>
     <PackageId>ExtendEverything.TetrisDashboard</PackageId>
     <Title>Tetris dashboard for Umbraco 17</Title>
-    <Version>0.0.3</Version>
+    <Version>17.0.0</Version>
     <Authors>Karl-Johan Sjögren</Authors>
     <Description>Adds a Tetris dashboard to the Umbraco 17 backoffice.</Description>
     <Copyright>Copyright © 2025 Karl-Johan Sjögren</Copyright>
@@ -27,10 +27,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Umbraco.Cms.Web.Website" Version="17.0.1" />
-    <PackageReference Include="Umbraco.Cms.Web.Common" Version="17.0.1" />
-		<PackageReference Remove="TestableIO.System.IO.Abstractions.Wrappers"/>
-		<PackageReference Remove="Microsoft.CodeAnalysis.BannedApiAnalyzers"/>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="17.0.2" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="17.0.2" />
+		<PackageReference Remove="TestableIO.System.IO.Abstractions.Wrappers" />
+		<PackageReference Remove="Microsoft.CodeAnalysis.BannedApiAnalyzers" />
   </ItemGroup>
 
   <ItemGroup>
