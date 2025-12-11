@@ -183,8 +183,8 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v5
       with:
-        name: publish-artifacts
-        path: ./artifacts/
+        name: packages
+        path: ./artifacts/*.nupkg
         if-no-files-found: error
 
 
