@@ -8,7 +8,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="Aspire.Azure.Storage.Blobs" Version="13.0.2" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.1.1" />
     <PackageVersion Include="Aspire.Hosting.Azure.Redis" Version="13.0.2" />
     <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.0.2" />
     <PackageVersion Include="Aspire.Hosting.Azure.Storage" Version="13.0.2" />
