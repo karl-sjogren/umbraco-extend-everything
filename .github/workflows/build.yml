@@ -59,7 +59,7 @@ jobs:
       run: dotnet test --configuration Release
 
     - name: Upload test results
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: net-test-results
         path: |
@@ -122,7 +122,7 @@ jobs:
         verbosity: 'Info'
 
     - name: Upload coverage report
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: coverage-report
         path: coverage-report
@@ -136,7 +136,7 @@ jobs:
         files: coverage-report/Cobertura.xml
 
     - name: Upload coverage history
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: coverage-history
         path: coverage-history
@@ -181,7 +181,7 @@ jobs:
       working-directory: ./
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: packages
         path: ./artifacts/*.nupkg
