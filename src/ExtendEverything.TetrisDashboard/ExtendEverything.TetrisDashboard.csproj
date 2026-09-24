@@ -10,7 +10,7 @@
     <Version>18.0.0</Version>
     <Authors>Karl-Johan Sjögren</Authors>
     <Description>Adds a Tetris dashboard to the Umbraco 18 backoffice.</Description>
-    <Copyright>Copyright © 2025 Karl-Johan Sjögren</Copyright>
+    <Copyright>Copyright © 2026 Karl-Johan Sjögren</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <PackageProjectUrl>https://github.com/karl-sjogren/umbraco-extend-everything/</PackageProjectUrl>
