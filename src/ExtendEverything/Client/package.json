@@ -1,6 +1,5 @@
 {
   "name": "extend-everything",
-  "packageManager": "yarn@4.18.0",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,5 +18,8 @@
     "node-fetch": "^3.3.2",
     "typescript": "^7.0.2",
     "vite": "^8.3.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
