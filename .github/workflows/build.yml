@@ -61,6 +61,7 @@ jobs:
   test-and-coverage-results:
     name: Publish test and coverage results
     runs-on: ubuntu-latest
+    if: false
 
     needs: [ net-test ]
 
