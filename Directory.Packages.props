@@ -1,57 +1,60 @@
 <Project>
   <ItemGroup>
-    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.39" />
+    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" Version="2.0.5" />
     <GlobalPackageReference Include="Karls.Analyzers" Version="0.4.3" />
-    <GlobalPackageReference Include="Roslynator.Analyzers" Version="4.14.1" />
-    <GlobalPackageReference Include="Roslynator.Formatting.Analyzers" Version="4.14.1" />
+    <GlobalPackageReference Include="Roslynator.Analyzers" Version="5.0.0" />
+    <GlobalPackageReference Include="Roslynator.Formatting.Analyzers" Version="5.0.0" />
     <GlobalPackageReference Include="TestableIO.System.IO.Abstractions.Analyzers" Version="2022.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageVersion Include="Aspire.Azure.Storage.Blobs" Version="13.0.2" />
-    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.0.2" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Redis" Version="13.0.2" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.0.2" />
-    <PackageVersion Include="Aspire.Hosting.Azure.Storage" Version="13.0.2" />
-    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.0.2" />
-    <PackageVersion Include="Aspire.StackExchange.Redis" Version="13.0.2" />
-    <PackageVersion Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.0.2" />
+    <PackageVersion Include="Aspire.Azure.Storage.Blobs" Version="13.5.4" />
+    <PackageVersion Include="Aspire.Hosting.AppHost" Version="13.5.4" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Redis" Version="13.5.4" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Sql" Version="13.5.4" />
+    <PackageVersion Include="Aspire.Hosting.Azure.Storage" Version="13.5.4" />
+    <PackageVersion Include="Aspire.Hosting.JavaScript" Version="13.5.4" />
+    <PackageVersion Include="Aspire.StackExchange.Redis" Version="13.5.4" />
+    <PackageVersion Include="Aspire.StackExchange.Redis.DistributedCaching" Version="13.5.4" />
     <PackageVersion Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.15.8" />
     <PackageVersion Include="BenchmarkDotNet" Version="0.15.8" />
-    <PackageVersion Include="coverlet.msbuild" Version="6.0.4" />
+    <PackageVersion Include="coverlet.msbuild" Version="10.0.1" />
     <PackageVersion Include="FakeItEasy.Analyzer.CSharp" Version="6.1.1" />
-    <PackageVersion Include="FakeItEasy" Version="8.3.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="4.14.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.0.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.0.0" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="5.0.0" />
-    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">
+    <PackageVersion Include="FakeItEasy" Version="9.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="5.6.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageVersion>
-    <PackageVersion Include="Microsoft.Extensions.Diagnostics.Testing" Version="10.1.0" />
-    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.1.0" />
-    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.1.0" />
-    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.Diagnostics.Testing" Version="10.10.0" />
+    <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="10.10.0" />
+    <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="10.10.0" />
+    <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="10.10.0" />
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
     <PackageVersion Include="Shouldly" Version="4.3.0" />
-    <PackageVersion Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="13.0.2" />
-    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.14.0" />
-    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.14.0" />
-    <PackageVersion Include="TestableIO.System.IO.Abstractions.TestingHelpers" Version="22.1.0" />
-    <PackageVersion Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.0.2" />
-    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.0.2" />
-    <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="17.0.2" />
-    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.0.2" />
-    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.0.2" />
-    <PackageVersion Include="Umbraco.Cms" Version="17.0.2" />
-    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="17.0.0" />
-    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="17.0.0" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
-    <PackageVersion Include="xunit.v3" Version="3.2.1" />
-    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.14.0" />
+    <PackageVersion Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="13.5.4" />
+    <PackageVersion Include="OpenTelemetry.Extensions.Hosting" Version="1.19.1" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.19.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.19.0" />
+    <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.19.0" />
+    <PackageVersion Include="Swashbuckle" Version="5.6.0" />
+    <PackageVersion Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+    <PackageVersion Include="TestableIO.System.IO.Abstractions.TestingHelpers" Version="22.2.0" />
+    <PackageVersion Include="TestableIO.System.IO.Abstractions.Wrappers" Version="22.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="18.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="18.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="18.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="18.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="18.2.0" />
+    <PackageVersion Include="Umbraco.Cms" Version="18.2.0" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="18.0.0" />
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="18.0.0" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
+    <PackageVersion Include="xunit.v3" Version="4.0.1" />
+    <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.19.1" />
   </ItemGroup>
 </Project>
