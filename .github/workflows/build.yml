@@ -39,14 +39,6 @@ jobs:
     - name: Checkout sources
       uses: actions/checkout@v6
 
-    - name: Cache NuGet packages
-      uses: actions/cache@v4
-      with:
-        path: ${{ github.workspace }}/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/*.Build.props') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-
-
     - name: Install .NET
       uses: actions/setup-dotnet@v5
       with:
@@ -56,19 +48,20 @@ jobs:
       run: dotnet restore --verbosity minimal
 
     - name: Run .NET tests
-      run: dotnet test --configuration Release
+      run: dotnet test --coverage --coverage-output-format cobertura --coverage-settings ./test/coverage.config --report-trx --configuration Release --no-progress
 
     - name: Upload test results
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: net-test-results
         path: |
           ./**/*.trx
-          ./**/coverage.cobertura.xml
+          ./**/*.cobertura.xml
 
   test-and-coverage-results:
     name: Publish test and coverage results
     runs-on: ubuntu-latest
+    if: false
 
     needs: [ net-test ]
 
@@ -79,7 +72,7 @@ jobs:
       uses: actions/checkout@v6
 
     - name: Download .NET tests results
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: net-test-results
         path: ./
@@ -114,18 +107,20 @@ jobs:
     - name: Generate coverage report
       uses: danielpalme/ReportGenerator-GitHub-Action@v5
       with:
-        reports: '../**/coverage.cobertura.xml;../**/cobertura-coverage.xml'
+        reports: './**/coverage.cobertura.xml;./**/cobertura-coverage.xml'
         targetdir: 'coverage-report'
         historydir: 'coverage-history'
         reporttypes: 'Html;MarkdownSummary;MarkdownDeltaSummary;Cobertura'
         assemblyfilters: '-xunit*'
         verbosity: 'Info'
 
-    - name: Upload coverage report
-      uses: actions/upload-artifact@v5
+    - name: Upload test results
+      uses: actions/upload-artifact@v7
       with:
-        name: coverage-report
-        path: coverage-report
+        name: net-test-results
+        path: |
+          ./**/*.trx
+          ./**/coverage.cobertura.xml
 
     - name: Upload to Codecov
       uses: codecov/codecov-action@v5
@@ -136,7 +131,7 @@ jobs:
         files: coverage-report/Cobertura.xml
 
     - name: Upload coverage history
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: coverage-history
         path: coverage-history
@@ -181,7 +176,7 @@ jobs:
       working-directory: ./
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v7
       with:
         name: packages
         path: ./artifacts/*.nupkg
@@ -206,7 +201,7 @@ jobs:
         sparse-checkout-cone-mode: false
 
     - name: Download artifacts
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: packages
         path: ./artifacts/
