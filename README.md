@@ -1,7 +1,7 @@
 # Extend Everything
 
-This is a sample repository that sets up a few Umbraco ~~15~~ ~~15~~ 17 back office
-extensions that tries to do a bit of everything.
+This is a sample repository that sets up a few Umbraco ~~15~~ ~~15~~ ~~17~~
+18 back office extensions that tries to do a bit of everything.
 
 Sets everything up with Aspire and both npm and yarn based backoffice projects.
 

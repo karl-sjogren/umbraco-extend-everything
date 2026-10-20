@@ -9,6 +9,6 @@ public class ExtendEverythingSettingsComposer : IComposer {
     public void Compose(IUmbracoBuilder builder) {
         builder.Services.AddUmbracoDbContext<ExtendEverythingContext>((options, connectionString, providerName, serviceProvider) => {
             options.UseUmbracoDatabaseProvider(serviceProvider!);
-        });
+        }, true);
     }
 }
