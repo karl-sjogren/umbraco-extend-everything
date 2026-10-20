@@ -5,7 +5,7 @@ public static partial class IDistributedApplicationBuilderExtensions {
             this IDistributedApplicationBuilder builder,
             IResourceBuilder<ProjectResource> umbracoProject,
             string redisCacheName) {
-        var redisCache = builder.AddAzureRedis(redisCacheName);
+        var redisCache = builder.AddAzureManagedRedis(redisCacheName);
 
         if(builder.ExecutionContext.IsRunMode) {
             redisCache
