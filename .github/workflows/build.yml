@@ -78,7 +78,7 @@ jobs:
         path: ./
 
     - name: Publish .NET tests
-      uses: dorny/test-reporter@v2
+      uses: dorny/test-reporter@v3
       with:
         name: 🧪 .NET test results
         path: ./**/*.trx
